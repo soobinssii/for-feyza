@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Feyza ❤️</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #ffccd5, #ffe5ec);
+            color: #5a3e36;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 600px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .next {
+            background-color: #ff8fab;
+            color: white;
+        }
+
+        img {
+            width: 70%;
+            max-width: 300px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .no {
+            background-color: #999;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SLIDE 1 (JUDUL) -->
+    <div class="slide active">
+        <h1>Special Gift for Adek Manis 💝</h1>
+        <button class="next" onclick="nextSlide()">Open ➜</button>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide">
+        <p>
+            Dari sekian banyak orang yang aku temui, kamu adalah orang yang selama ini aku cari.
+            Seseorang yang bisa aku ajak bercanda, yang ngerti aku, dan selalu ada dengan cara yang sederhana tapi berarti.
+        </p>
+        <button class="next" onclick="nextSlide()">Next ➜</button>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide">
+        <p>
+            Kamu itu manis, imut, cantik… tapi lebih dari itu,
+            kamu bikin aku ngerasa cukup.
+        </p>
+        <button class="next" onclick="nextSlide()">Next ➜</button>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide">
+        <p>
+            Aku ngerasa kita setara, saling menghargai,
+            dan saling mencintai dengan cara kita sendiri.
+        </p>
+        <button class="next" onclick="nextSlide()">Next ➜</button>
+    </div>
+
+    <!-- SLIDE 5 (FINAL) -->
+    <div class="slide">
+        <img src="foto.jpg" alt="Foto kita">
+
+        <p><i>“Salah satu momen favorit aku sama kamu.”</i></p>
+
+        <h2>Mau gak kamu jadi pacarku? ❤️</h2>
+
+        <button class="yes" onclick="jawabYes()">Mau</button>
+        <button class="no" onmouseover="kabur(this)" onclick="nolClick()">Gak</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove("active");
+            currentSlide++;
+            slides[currentSlide].classList.add("active");
+        }
+
+        function jawabYes() {
+            alert("Sekarang kamu resmi jadi pacar aku ❤️");
+        }
+
+        function kabur(btn) {
+            btn.style.position = "absolute";
+            btn.style.top = Math.random() * window.innerHeight + "px";
+            btn.style.left = Math.random() * window.innerWidth + "px";
+        }
+
+        function nolClick() {
+            alert("Eits… gak bisa 😜 harus pilih yang atas");
+        }
+    </script>
+
+</body>
+</html>
